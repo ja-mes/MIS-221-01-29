@@ -6,18 +6,22 @@ namespace Class_01_29
     {
         static void Main(string[] args)
         {
-            int number = 10;
+            int x = 10;
+            int y = 20;
 
-            // use ref to pass by reference
-
-            Console.WriteLine("Number before method: " + number);
-            UpdateNumber(ref number); // number of parameters and arguments must be equal
-            Console.WriteLine("Number after ref method: " + number);
-            UpdateNumber(number);
-            Console.WriteLine("Number after val method: " + number);
-
-
+            Console.WriteLine("Before Method: \tX = " + x + "\tY = " + y);
+            Swap(ref x, ref y);
+            Console.WriteLine("After Method:\tX = " + x + "\tY = " + y);
             Console.ReadKey();
+
+        }
+
+        static void Swap(ref int x, ref int y)
+        {
+            int z = x;
+            x = y;
+            y = z;
+            Console.WriteLine("Inside Method:\tX = " + x + "\tY = " + y);
         }
 
         static void UpdateNumber(ref int num)
